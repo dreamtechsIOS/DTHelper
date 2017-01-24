@@ -1,0 +1,6 @@
+framework module DTHelper {
+  umbrella header "DTHelper-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,19 @@
+PODS:
+  - DTHelper (0.1.0)
+  - MBProgressHUD (1.0.0)
+
+DEPENDENCIES:
+  - DTHelper (from `../`)
+  - MBProgressHUD (~> 1.0.0)
+
+EXTERNAL SOURCES:
+  DTHelper:
+    :path: ../
+
+SPEC CHECKSUMS:
+  DTHelper: df0873d45a01ccb9275d25ca66cdf34b20c50baa
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+
+PODFILE CHECKSUM: 79a1859cf4765d7de0de375f84ff88fda7129ef2
+
+COCOAPODS: 1.1.1

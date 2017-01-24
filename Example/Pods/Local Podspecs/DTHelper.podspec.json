@@ -1,0 +1,22 @@
+{
+  "name": "DTHelper",
+  "version": "0.1.0",
+  "summary": "A short description of DTHelper.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/DTHelper",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Ayman Rawashdeh": "ayman.rawashdeh@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/DTHelper.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "DTHelper/Classes/**/*"
+}
