@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import Photos
 import QuartzCore
-import MBProgressHUD
+//import MBProgressHUD
 
 
 enum TextFieldValidationType: Int {
@@ -27,7 +27,7 @@ enum TextFieldValidationType: Int {
     static let sharedInstance = Helper()
     var isChangingLanguage = false
     static var isWallGroup = false
-    static var progreesHUD:MBProgressHUD?
+   // static var progreesHUD:MBProgressHUD?
     
     fileprivate override init(){
         
@@ -142,8 +142,7 @@ enum TextFieldValidationType: Int {
     
     func prepareAnimationForPush(NavigationController navigation:UINavigationController){
         
-        if LanguageManager.sharedInstance.language == .arabic {
-            
+        
             let transition = CATransition()
             transition.duration = 0.40;
             transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
@@ -152,17 +151,7 @@ enum TextFieldValidationType: Int {
             
             navigation.view.layer.add(transition, forKey: kCATransition)
             
-        }else {
-            
-            let transition = CATransition()
-            transition.duration = 0.40;
-            transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-            transition.type = kCATransitionMoveIn;
-            transition.subtype = kCATransitionFromRight;
-            
-            navigation.view.layer.add(transition, forKey: kCATransition)
-            
-        }
+        
         
         
     }
@@ -170,18 +159,7 @@ enum TextFieldValidationType: Int {
     
     
     func prepareAnimationForPop(NavigationController navigation:UINavigationController){
-        
-        if LanguageManager.sharedInstance.language == .arabic {
-            
-            let transition = CATransition()
-            transition.duration = 0.40;
-            transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-            transition.type = kCATransitionMoveIn;
-            transition.subtype = kCATransitionFromRight;
-            
-            navigation.view.layer.add(transition, forKey: kCATransition)
-            
-        }else {
+     
             
             let transition = CATransition()
             transition.duration = 0.40;
@@ -192,7 +170,7 @@ enum TextFieldValidationType: Int {
             navigation.view.layer.add(transition, forKey: kCATransition)
             
             
-        }
+        
         
         
     }
@@ -261,16 +239,11 @@ enum TextFieldValidationType: Int {
             
         }
         
-        if LanguageManager.sharedInstance.language == .arabic {
-            
-            alert.addAction(cancelButton)
-            alert.addAction(okButton)
-            
-        }else{
+       
             
             alert.addAction(okButton)
             alert.addAction(cancelButton)
-        }
+        
         
         
         let delayTime = DispatchTime.now() + Double(Int64(0.2 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
@@ -557,26 +530,6 @@ enum TextFieldValidationType: Int {
     
     
     
-    func attributedString(fromHtmlText htmlString: String) -> NSAttributedString?{
-        
-        
-        return AttributedTextHelper.attributedString(fromHtmlText: htmlString)
-        
-//        var attributedString:NSAttributedString?
-//        
-//        if let data = htmlString.data(using: .utf8) {
-//            
-//            do{
-//                try attributedString = NSAttributedString(data: data, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute: String.Encoding.utf8], documentAttributes: nil)
-//            }catch{
-//                
-//            }
-//            
-//        }
-//        
-//        return attributedString
-    }
-   
     
     
     
@@ -650,7 +603,7 @@ extension String {
         var attributes:[String: Any]?
        
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = LanguageManager.sharedInstance.language == .english ? .left : .right
+        paragraphStyle.alignment = .left
         
         switch stringType {
             
